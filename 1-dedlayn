@@ -1,0 +1,21 @@
+import pandas as pd
+#1.DataFrame yaratish
+data={
+    'Ism':['Ruxshona','Asal','Maftuna','Bekzod','Shohsanam','Xonzoda','Zahro','Oyista','Doston','Dilnoza'],
+    'Yoshi':['23','18','19','18','34','15','14','24','12','26'],
+'Shahar':['Toshkent','Fargona','Andijon','Samarqand','Jizzax','Namangan','Qashqadaryo','Margilon','Sirdaryo','Surxandaryo']
+}
+df = pd.DataFrame(data)
+
+#2.Ma'lumotlarni ko'rish
+print(df)
+#3.Filtrlash: 20 yoshdan kichiklar
+young_people =df[df['Yoshi']<20]
+print("20 yoshdan kichiklar:\n",young_people)
+# 4. yoshi ustunini yangilash
+df['Yoshi'] += 1
+print("Yangilangan DataFrame:\n",df)
+
+#5. farg'onada yashaydiganlarni chiqarish 
+fargona_people = df[df['shahar'] == 'Fargona']
+print("Fargonada yashaydiganlar:\n",fargona_people)
